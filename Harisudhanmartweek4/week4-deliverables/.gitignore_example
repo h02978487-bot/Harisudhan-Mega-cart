@@ -1,0 +1,32 @@
+# Dependencies
+/target/
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Environment & Config
+.env
+config.properties
+application.properties
+!.env.example
+
+# Database
+*.db
+*.mv.db
+*.trace.db
+
+# Build artifacts
+/build/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
