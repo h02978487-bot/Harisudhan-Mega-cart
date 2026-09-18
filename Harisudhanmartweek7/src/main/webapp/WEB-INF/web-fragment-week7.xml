@@ -1,0 +1,57 @@
+<!--
+  Merge these entries into your existing web.xml.
+  These are only needed if your project configures filters/error-pages via
+  web.xml instead of the @WebFilter annotations already on AuthFilter and
+  EncodingFilter. If you're using annotations, you only need the
+  <error-page> block below — filters are auto-registered.
+
+  Security checklist item: "Error pages do not expose stack traces."
+-->
+
+<error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/views/error/404.jsp</location>
+</error-page>
+
+<error-page>
+    <error-code>500</error-code>
+    <location>/WEB-INF/views/error/500.jsp</location>
+</error-page>
+
+<error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/WEB-INF/views/error/500.jsp</location>
+</error-page>
+
+<!-- Only needed without @WebFilter annotations:
+
+<filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.yourname.yournamemart.filter.EncodingFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+<filter>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>com.yourname.yournamemart.filter.AuthFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/api/v1/cart/*</url-pattern>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/api/v1/orders/*</url-pattern>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/api/v1/seller/*</url-pattern>
+</filter-mapping>
+<filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/api/v1/admin/*</url-pattern>
+</filter-mapping>
+-->
