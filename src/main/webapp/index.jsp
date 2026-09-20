@@ -25,28 +25,28 @@
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:15px">
 <div style="background:white;border-radius:8px;padding:15px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
 <div style="font-size:60px">📱</div>
-<div style="font-weight:bold;margin:10px 0">Smartphone Pro</div>
+<a href="product.jsp?id=1" style="color:inherit;text-decoration:none">Smartphone Pro</a>
 <div style="color:#b12704;font-size:18px;font-weight:bold">₹15,999</div>
 <div style="color:#ff9900">★★★★★</div>
 <button style="width:100%;padding:10px;background:#ff9900;border:none;border-radius:5px;font-weight:bold;cursor:pointer;margin-top:10px">Add to Cart 🛒</button>
 </div>
 <div style="background:white;border-radius:8px;padding:15px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
 <div style="font-size:60px">💻</div>
-<div style="font-weight:bold;margin:10px 0">Laptop Ultra</div>
+<a href="product.jsp?id=2" style="color:inherit;text-decoration:none">Laptop Ultra</a>
 <div style="color:#b12704;font-size:18px;font-weight:bold">₹45,999</div>
 <div style="color:#ff9900">★★★★☆</div>
 <button style="width:100%;padding:10px;background:#ff9900;border:none;border-radius:5px;font-weight:bold;cursor:pointer;margin-top:10px">Add to Cart 🛒</button>
 </div>
 <div style="background:white;border-radius:8px;padding:15px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
 <div style="font-size:60px">🎧</div>
-<div style="font-weight:bold;margin:10px 0">Headphones</div>
+<a href="product.jsp?id=3" style="color:inherit;text-decoration:none">Headphones</a>
 <div style="color:#b12704;font-size:18px;font-weight:bold">₹2,999</div>
 <div style="color:#ff9900">★★★★★</div>
 <button style="width:100%;padding:10px;background:#ff9900;border:none;border-radius:5px;font-weight:bold;cursor:pointer;margin-top:10px">Add to Cart 🛒</button>
 </div>
 <div style="background:white;border-radius:8px;padding:15px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
 <div style="font-size:60px">⌚</div>
-<div style="font-weight:bold;margin:10px 0">Smart Watch</div>
+<a href="product.jsp?id=4" style="color:inherit;text-decoration:none">Smart Watch</a>
 <div style="color:#b12704;font-size:18px;font-weight:bold">₹8,999</div>
 <div style="color:#ff9900">★★★★☆</div>
 <button style="width:100%;padding:10px;background:#ff9900;border:none;border-radius:5px;font-weight:bold;cursor:pointer;margin-top:10px">Add to Cart 🛒</button>
