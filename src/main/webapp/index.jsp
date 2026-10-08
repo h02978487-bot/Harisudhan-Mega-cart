@@ -30,7 +30,7 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; }
 .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
 .product-card { background: white; border-radius: 8px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; transition: all 0.2s; }
 .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-.product-emoji { font-size: 70px; text-align: center; padding: 10px 0; }
+.product-emoji { display:none; }
 .product-name { font-size: 14px; font-weight: bold; color: #333; margin-bottom: 5px; }
 .product-category { font-size: 12px; color: #888; margin-bottom: 5px; }
 .product-rating { color: #ff9900; font-size: 13px; margin-bottom: 8px; }
