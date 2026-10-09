@@ -58,7 +58,7 @@ footer span{color:#7c3aed;font-weight:bold;}
     <button onclick="searchProducts()">&#128269;</button>
   </div>
   <div class="nav-right">
-    <a href="cart.jsp">&#128722; Cart</a>
+    <a href="about.jsp">About</a><a href="cart.jsp"><a href="cart.jsp">&#128722; Cart</a>#128722; Cart</a>
     <a href="orders.jsp">Orders</a>
     <a href="login.jsp">Logout</a>
   </div>
