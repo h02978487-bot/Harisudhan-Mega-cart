@@ -59,7 +59,7 @@ function doLogin(){
     document.getElementById('errMsg').textContent='Please enter email and password!';
     return;
   }
-  window.location.href='products.jsp';
+  window.location.href='index.jsp';
 }
 var canvas=document.getElementById('canvas');
 var ctx=canvas.getContext('2d');
