@@ -91,7 +91,7 @@ function money(n){return 'Rs.'+n.toLocaleString();}
 function disc(p,o){return Math.round((o-p)/o*100);}
 function render(list){
   document.getElementById('productGrid').innerHTML=list.map(function(p){
-    return '<div class="product-card">'+
+    return '<div class="product-card" onclick="showDetail('+products.indexOf(p)+')">'+'
       '<img src="'+p.image+'" alt="'+p.name+'">'+
       '<div class="product-name">'+p.name+'</div>'+
       '<div class="product-category">'+p.category+'</div>'+
@@ -120,3 +120,36 @@ document.write(document.getElementById("chatFrame").contentDocument.body.innerHT
 </script>
 <button onclick="window.location.href='chatbot.jsp'" style="position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#7c3aed;border-radius:50%;border:none;cursor:pointer;font-size:28px;box-shadow:0 4px 15px rgba(255,153,0,0.5);z-index:1000;animation:pulse 2s infinite;">🤖</button></body>
 </html>
+<div id="detailOverlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:1000;justify-content:center;align-items:center;">
+  <div style="background:white;border-radius:20px;padding:30px;max-width:500px;width:90%;position:relative;">
+    <button onclick="document.getElementById('detailOverlay').style.display='none'" style="position:absolute;top:15px;right:15px;background:none;border:none;font-size:24px;cursor:pointer;">✕</button>
+    <img id="dImg" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:15px;">
+    <h2 id="dName" style="color:#333;margin-bottom:5px;"></h2>
+    <p id="dCat" style="color:#888;font-size:13px;margin-bottom:10px;"></p>
+    <p id="dRating" style="color:#7c3aed;margin-bottom:10px;"></p>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
+      <span id="dPrice" style="font-size:24px;color:#b12704;font-weight:bold;"></span>
+      <span id="dOrig" style="color:#888;text-decoration:line-through;font-size:14px;"></span>
+      <span id="dDisc" style="color:green;font-weight:bold;font-size:14px;"></span>
+    </div>
+    <p id="dDesc" style="color:#666;font-size:14px;margin-bottom:20px;"></p>
+    <div style="display:flex;gap:10px;">
+      <button onclick="alert('Added to cart!')" style="flex:1;padding:12px;background:#f0f0f0;border:2px solid #7c3aed;border-radius:8px;color:#7c3aed;font-weight:bold;cursor:pointer;">Add to Cart</button>
+      <button onclick="window.location.href='payment.jsp'" style="flex:1;padding:12px;background:#7c3aed;border:none;border-radius:8px;color:white;font-weight:bold;cursor:pointer;">Buy Now &#8594;</button>
+    </div>
+  </div>
+</div>
+<script>
+function showDetail(idx){
+  var p=products[idx];
+  document.getElementById('dImg').src=p.image;
+  document.getElementById('dName').textContent=p.name;
+  document.getElementById('dCat').textContent=p.category;
+  document.getElementById('dRating').textContent=p.rating+' ('+p.reviews+' reviews)';
+  document.getElementById('dPrice').textContent=money(p.price);
+  document.getElementById('dOrig').textContent=money(p.original);
+  document.getElementById('dDisc').textContent=disc(p.price,p.original)+'% off';
+  document.getElementById('dDesc').textContent=p.desc||'Premium quality product';
+  document.getElementById('detailOverlay').style.display='flex';
+}
+</script>
