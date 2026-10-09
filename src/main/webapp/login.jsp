@@ -44,7 +44,7 @@ body{font-family:Arial,sans-serif;min-height:100vh;display:flex;align-items:cent
        if (error != null) { %>
     <div class="error-msg">&#9888; <%= error %></div>
     <% } %>
-    <form action="login" method="post">
+    <form action="login.jsp" method="post">
       <div class="form-group">
         <label>&#9993; Email Address</label>
         <input type="email" name="email" placeholder="Enter your email" required />
