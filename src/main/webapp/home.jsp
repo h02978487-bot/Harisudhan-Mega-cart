@@ -114,5 +114,9 @@ function searchProducts(){
 }
 render(products);
 </script>
-</body>
+<script src="chatbot.jsp"></script><iframe src="chatbot.jsp" style="display:none" id="chatFrame"></iframe>
+<script>
+document.write(document.getElementById("chatFrame").contentDocument.body.innerHTML);
+</script>
+<button onclick="window.location.href='chatbot.jsp'" style="position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#ff9900;border-radius:50%;border:none;cursor:pointer;font-size:28px;box-shadow:0 4px 15px rgba(255,153,0,0.5);z-index:1000;animation:pulse 2s infinite;">🤖</button></body>
 </html>
