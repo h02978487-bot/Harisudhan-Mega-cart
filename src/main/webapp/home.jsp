@@ -7,37 +7,37 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Arial,sans-serif;background:#f0f0f0;}
-.navbar{background:#131921;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.navbar{background:#1a0533;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 .logo{color:white;font-size:22px;font-weight:bold;}
-.logo span{color:#ff9900;}
+.logo span{color:#7c3aed;}
 .search-box{display:flex;flex:1;margin:0 20px;}
 .search-box input{width:100%;padding:10px;font-size:14px;border:none;border-radius:4px 0 0 4px;}
-.search-box button{padding:10px 15px;background:#ff9900;border:none;cursor:pointer;}
+.search-box button{padding:10px 15px;background:#7c3aed;border:none;cursor:pointer;}
 .nav-right{display:flex;gap:15px;align-items:center;}
 .nav-right a{color:white;text-decoration:none;font-size:13px;}
-.banner{background:linear-gradient(135deg,#131921,#232f3e);color:white;padding:40px 30px;}
-.banner h1{font-size:36px;margin-bottom:10px;color:#ff9900;}
+.banner{background:linear-gradient(135deg,#1a0533,#2d1b69);color:white;padding:40px 30px;}
+.banner h1{font-size:36px;margin-bottom:10px;color:#7c3aed;}
 .banner p{font-size:16px;margin-bottom:20px;color:#ccc;}
-.banner button{padding:12px 30px;background:#ff9900;border:none;border-radius:5px;font-size:16px;font-weight:bold;cursor:pointer;}
+.banner button{padding:12px 30px;background:#7c3aed;border:none;border-radius:5px;font-size:16px;font-weight:bold;cursor:pointer;}
 .categories{background:white;padding:12px 20px;display:flex;gap:10px;overflow-x:auto;border-bottom:1px solid #ddd;}
 .cat-btn{padding:8px 16px;background:#f0f0f0;border:none;border-radius:20px;cursor:pointer;font-size:13px;white-space:nowrap;}
-.cat-btn:hover,.cat-btn.active{background:#ff9900;color:white;}
+.cat-btn:hover,.cat-btn.active{background:#7c3aed;color:white;}
 .section{padding:20px;}
-.section h2{font-size:22px;margin-bottom:15px;color:#333;border-left:4px solid #ff9900;padding-left:10px;}
+.section h2{font-size:22px;margin-bottom:15px;color:#333;border-left:4px solid #7c3aed;padding-left:10px;}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;}
 .product-card{background:white;border-radius:8px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:all 0.2s;}
 .product-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
 .product-card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px;}
 .product-name{font-size:14px;font-weight:bold;color:#333;margin-bottom:5px;}
 .product-category{font-size:12px;color:#888;margin-bottom:5px;}
-.product-rating{color:#ff9900;font-size:13px;margin-bottom:8px;}
-.product-price{font-size:20px;color:#b12704;font-weight:bold;margin-bottom:5px;}
+.product-rating{color:#7c3aed;font-size:13px;margin-bottom:8px;}
+.product-price{font-size:20px;color:#7c3aed;font-weight:bold;margin-bottom:5px;}
 .product-original{font-size:13px;color:#888;text-decoration:line-through;}
 .product-discount{font-size:13px;color:green;font-weight:bold;}
-.btn-add-cart{width:100%;padding:10px;background:#ff9900;border:none;border-radius:5px;font-size:14px;font-weight:bold;cursor:pointer;margin-top:10px;}
-.btn-view{width:100%;padding:8px;background:white;border:2px solid #ff9900;border-radius:5px;font-size:13px;cursor:pointer;margin-top:5px;color:#ff9900;font-weight:bold;}
-footer{background:#131921;color:#ccc;text-align:center;padding:20px;}
-footer span{color:#ff9900;font-weight:bold;}
+.btn-add-cart{width:100%;padding:10px;background:#7c3aed;border:none;border-radius:5px;font-size:14px;font-weight:bold;cursor:pointer;margin-top:10px;}
+.btn-view{width:100%;padding:8px;background:white;border:2px solid #7c3aed;border-radius:5px;font-size:13px;cursor:pointer;margin-top:5px;color:#7c3aed;font-weight:bold;}
+footer{background:#1a0533;color:#ccc;text-align:center;padding:20px;}
+footer span{color:#7c3aed;font-weight:bold;}
 </style>
 </head>
 <body>
@@ -118,5 +118,5 @@ render(products);
 <script>
 document.write(document.getElementById("chatFrame").contentDocument.body.innerHTML);
 </script>
-<button onclick="window.location.href='chatbot.jsp'" style="position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#ff9900;border-radius:50%;border:none;cursor:pointer;font-size:28px;box-shadow:0 4px 15px rgba(255,153,0,0.5);z-index:1000;animation:pulse 2s infinite;">🤖</button></body>
+<button onclick="window.location.href='chatbot.jsp'" style="position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#7c3aed;border-radius:50%;border:none;cursor:pointer;font-size:28px;box-shadow:0 4px 15px rgba(255,153,0,0.5);z-index:1000;animation:pulse 2s infinite;">🤖</button></body>
 </html>
