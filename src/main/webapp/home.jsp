@@ -160,3 +160,14 @@ render(products);
 </script>
 </body>
 </html>
+<script>
+function addToCartLS(idx){
+  var p=products[idx];
+  var cart=JSON.parse(localStorage.getItem('hmCart')||'[]');
+  var existing=cart.find(function(i){return i.id===p.id;});
+  if(existing){existing.qty++;}
+  else{cart.push({id:p.id,name:p.name,price:p.price,original:p.original,category:p.category,image:p.image,qty:1});}
+  localStorage.setItem('hmCart',JSON.stringify(cart));
+  alert('Added to cart!');
+}
+</script>
