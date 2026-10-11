@@ -61,7 +61,7 @@ footer span{color:#7c3aed;font-weight:bold;}
   <div class="nav-right">
     <a href="about.jsp">About</a><a href="cart.jsp"><a href="cart.jsp">&#128722; Cart</a>#128722; Cart</a>
     <a href="orders.jsp">Orders</a>
-    <a href="profile.jsp"><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>
+    <a href="about.jsp">About</a><a href="cart.jsp">    <a href="profile.jsp"><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>#128722; Cart</a><a href="orders.jsp">Orders</a><a href="profile.jsp">    <a href="profile.jsp"><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>
   </div>
 </div>
 <div class="banner">
