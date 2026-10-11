@@ -9,7 +9,7 @@
 body{font-family:Arial,sans-serif;background:#f0f0f0;}
 .navbar{background:#1a0533;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 .logo{color:white;font-size:22px;font-weight:bold;}
-.logo span{color:#7c3aed;}
+.logo span{color:#a78bfa;}
 .search-box{display:flex;flex:1;margin:0 20px;}
 .search-box input{width:100%;padding:10px;font-size:14px;border:none;border-radius:4px 0 0 4px;}
 .search-box button{padding:10px 15px;background:#7c3aed;border:none;cursor:pointer;color:white;border-radius:0 4px 4px 0;}
@@ -25,7 +25,7 @@ body{font-family:Arial,sans-serif;background:#f0f0f0;}
 .section{padding:20px;}
 .section h2{font-size:22px;margin-bottom:15px;color:#333;border-left:4px solid #7c3aed;padding-left:10px;}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;}
-.product-card{animation:fadeIn 0.5s ease;background:white;border-radius:8px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,0.08);cursor:pointer;transition:all 0.2s;}
+.product-card{background:white;border-radius:8px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,0.08);cursor:pointer;transition:all 0.2s;}
 .product-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(124,58,237,0.2);}
 .product-card img{width:100%;height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px;}
 .product-name{font-size:14px;font-weight:bold;color:#333;margin-bottom:5px;}
@@ -36,9 +36,8 @@ body{font-family:Arial,sans-serif;background:#f0f0f0;}
 .product-discount{font-size:13px;color:green;font-weight:bold;}
 .btn-add-cart{width:100%;padding:10px;background:#7c3aed;border:none;border-radius:5px;font-size:14px;font-weight:bold;cursor:pointer;margin-top:10px;color:white;}
 .btn-view{width:100%;padding:8px;background:white;border:2px solid #7c3aed;border-radius:5px;font-size:13px;cursor:pointer;margin-top:5px;color:#7c3aed;font-weight:bold;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 footer{background:#1a0533;color:#ccc;text-align:center;padding:20px;}
-footer span{color:#7c3aed;font-weight:bold;}
+footer span{color:#a78bfa;font-weight:bold;}
 .overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:1000;justify-content:center;align-items:center;}
 .overlay.active{display:flex;}
 .detail-box{background:white;border-radius:20px;padding:30px;max-width:500px;width:90%;position:relative;}
@@ -58,10 +57,12 @@ footer span{color:#7c3aed;font-weight:bold;}
     <input type="text" id="searchInput" placeholder="Search products...">
     <button onclick="searchProducts()">&#128269;</button>
   </div>
-  <div class="nav-right"><a href="about.jsp">About</a><a href="cart.jsp">  <div class="nav-right">#128722; Cart</a><a href="orders.jsp">Orders</a><a href="profile.jsp">  <div class="nav-right">#128100; Profile</a><a href="login.jsp">Logout</a></div>
-    <a href="about.jsp">About</a><a href="cart.jsp"><a href="cart.jsp">&#128722; Cart</a>#128722; Cart</a>
+  <div class="nav-right">
+    <a href="about.jsp">About</a>
+    <a href="cart.jsp">&#128722; Cart</a>
     <a href="orders.jsp">Orders</a>
-    <a href="about.jsp">About</a><a href="cart.jsp">    <a href="profile.jsp"><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>#128722; Cart</a><a href="orders.jsp">Orders</a><a href="profile.jsp">    <a href="profile.jsp"><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>
+    <a href="profile.jsp">&#128100; Profile</a>
+    <a href="login.jsp">Logout</a>
   </div>
 </div>
 <div class="banner">
@@ -97,7 +98,7 @@ footer span{color:#7c3aed;font-weight:bold;}
     </div>
     <p id="dDesc" style="color:#666;font-size:14px;margin-bottom:15px;"></p>
     <div class="detail-actions">
-      <button class="btn-cart2" onclick="alert('Added to cart!')">&#128722; Add to Cart</button>
+      <button class="btn-cart2" onclick="addToCartLS(currentIdx);document.getElementById('detailOverlay').classList.remove('active')">&#128722; Add to Cart</button>
       <button class="btn-buy" onclick="window.location.href='payment.jsp'">Buy Now &#8594;</button>
     </div>
   </div>
@@ -118,9 +119,20 @@ const products=[
 {id:11,name:"Football",category:"Sports",price:799,original:1299,rating:"★★★★★",reviews:187,desc:"Professional size 5 football.",image:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&q=80"},
 {id:12,name:"Bluetooth Speaker",category:"Electronics",price:1999,original:3499,rating:"★★★★★",reviews:389,desc:"Waterproof portable speaker 12hr battery.",image:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&q=80"}
 ];
+var currentIdx=0;
 function money(n){return 'Rs.'+n.toLocaleString();}
 function disc(p,o){return Math.round((o-p)/o*100);}
+function addToCartLS(idx){
+  var p=products[idx];
+  var cart=JSON.parse(localStorage.getItem('hmCart')||'[]');
+  var existing=cart.find(function(i){return i.id===p.id;});
+  if(existing){existing.qty++;}
+  else{cart.push({id:p.id,name:p.name,price:p.price,original:p.original,category:p.category,image:p.image,qty:1});}
+  localStorage.setItem('hmCart',JSON.stringify(cart));
+  alert('Added to cart!');
+}
 function showDetail(idx){
+  currentIdx=idx;
   var p=products[idx];
   document.getElementById('dImg').src=p.image;
   document.getElementById('dName').textContent=p.name;
@@ -133,16 +145,17 @@ function showDetail(idx){
   document.getElementById('detailOverlay').classList.add('active');
 }
 function render(list){
-  document.getElementById('productGrid').innerHTML=list.map(function(p,i){
-    return '<div class="product-card" onclick="showDetail('+products.indexOf(p)+')">' +
-      '<img src="'+p.image+'" alt="'+p.name+'">' +
-      '<div class="product-name">'+p.name+'</div>' +
-      '<div class="product-category">'+p.category+'</div>' +
-      '<div class="product-rating">'+p.rating+' ('+p.reviews+')</div>' +
-      '<div class="product-price">'+money(p.price)+'</div>' +
-      '<div><span class="product-original">'+money(p.original)+'</span> <span class="product-discount">'+disc(p.price,p.original)+'% off</span></div>' +
-      '<button class="btn-add-cart" onclick="event.stopPropagation();alert(\'Added to cart!\')">Add to Cart</button>' +
-      '<button class="btn-view" onclick="event.stopPropagation();showDetail('+products.indexOf(p)+')">View Details</button>' +
+  document.getElementById('productGrid').innerHTML=list.map(function(p){
+    var idx=products.indexOf(p);
+    return '<div class="product-card" onclick="showDetail('+idx+')">'+
+      '<img src="'+p.image+'" alt="'+p.name+'">'+
+      '<div class="product-name">'+p.name+'</div>'+
+      '<div class="product-category">'+p.category+'</div>'+
+      '<div class="product-rating">'+p.rating+' ('+p.reviews+')</div>'+
+      '<div class="product-price">'+money(p.price)+'</div>'+
+      '<div><span class="product-original">'+money(p.original)+'</span> <span class="product-discount">'+disc(p.price,p.original)+'% off</span></div>'+
+      '<button class="btn-add-cart" onclick="event.stopPropagation();addToCartLS('+idx+')">Add to Cart</button>'+
+      '<button class="btn-view" onclick="event.stopPropagation();showDetail('+idx+')">View Details</button>'+
       '</div>';
   }).join('');
 }
@@ -160,14 +173,3 @@ render(products);
 </script>
 </body>
 </html>
-<script>
-function addToCartLS(idx){
-  var p=products[idx];
-  var cart=JSON.parse(localStorage.getItem('hmCart')||'[]');
-  var existing=cart.find(function(i){return i.id===p.id;});
-  if(existing){existing.qty++;}
-  else{cart.push({id:p.id,name:p.name,price:p.price,original:p.original,category:p.category,image:p.image,qty:1});}
-  localStorage.setItem('hmCart',JSON.stringify(cart));
-  alert('Added to cart!');
-}
-</script>
