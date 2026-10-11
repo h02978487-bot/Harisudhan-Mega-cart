@@ -58,7 +58,7 @@ footer span{color:#7c3aed;font-weight:bold;}
     <input type="text" id="searchInput" placeholder="Search products...">
     <button onclick="searchProducts()">&#128269;</button>
   </div>
-  <div class="nav-right">
+  <div class="nav-right"><a href="about.jsp">About</a><a href="cart.jsp">  <div class="nav-right">#128722; Cart</a><a href="orders.jsp">Orders</a><a href="profile.jsp">  <div class="nav-right">#128100; Profile</a><a href="login.jsp">Logout</a></div>
     <a href="about.jsp">About</a><a href="cart.jsp"><a href="cart.jsp">&#128722; Cart</a>#128722; Cart</a>
     <a href="orders.jsp">Orders</a>
     <a href="about.jsp">About</a><a href="cart.jsp">    <a href="profile.jsp"><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>#128722; Cart</a><a href="orders.jsp">Orders</a><a href="profile.jsp">    <a href="profile.jsp"><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>#128100; Profile</a><a href="login.jsp">Logout</a>
