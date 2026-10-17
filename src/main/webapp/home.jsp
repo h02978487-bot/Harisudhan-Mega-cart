@@ -44,7 +44,7 @@ canvas{position:fixed;top:0;left:0;z-index:0;pointer-events:none;}
 .product-discount{font-size:13px;color:#34d399;font-weight:bold;}
 .btn-add-cart{width:100%;padding:10px;background:#7c3aed;border:none;border-radius:8px;font-size:14px;font-weight:bold;cursor:pointer;margin-top:10px;color:white;transition:all 0.3s;}
 .btn-add-cart:hover{background:#6d28d9;box-shadow:0 0 15px rgba(124,58,237,0.5);}
-.btn-view{width:100%;padding:8px;background:transparent;border:1px solid #7c3aed;border-radius:8px;font-size:13px;cursor:pointer;margin-top:5px;color:#a78bfa;transition:all 0.3s;}
+.btn-wish{width:100%;padding:8px;background:transparent;border:1px solid #dc2626;border-radius:8px;font-size:13px;cursor:pointer;margin-top:5px;color:#f87171;transition:all 0.3s;}.btn-view{width:100%;padding:8px;background:transparent;border:1px solid #7c3aed;border-radius:8px;font-size:13px;cursor:pointer;margin-top:5px;color:#a78bfa;transition:all 0.3s;}
 .btn-view:hover{background:rgba(124,58,237,0.2);}
 footer{position:relative;z-index:1;background:rgba(26,5,51,0.9);color:#aaa;text-align:center;padding:20px;border-top:1px solid rgba(124,58,237,0.2);}
 footer span{color:#a78bfa;font-weight:bold;}
