@@ -100,7 +100,7 @@ footer span{color:#a78bfa;font-weight:bold;}
   <button class="cat-btn" onclick="filterCat(this,'Sports')">&#9917; Sports</button>
   <button class="cat-btn" onclick="filterCat(this,'Gaming')">&#127918; Gaming</button>
 </div>
-<div class="section">
+<div style="position:relative;z-index:1;padding:20px;"><div id="adSlider" style="border-radius:15px;overflow:hidden;position:relative;height:120px;"><div class="ad-slide" style="background:linear-gradient(135deg,#1a0533,#7c3aed);display:flex;align-items:center;justify-content:space-between;padding:20px 30px;height:120px;"><div><div style="color:#ffd700;font-size:12px;font-weight:bold;">ADVERTISEMENT</div><div style="color:white;font-size:24px;font-weight:bold;"><div class="section">#128252; Harisudhan Textiles</div><div style="color:#ccc;font-size:13px;">Premium fabrics at best prices!</div></div><div style="font-size:60px;"><div class="section">#128255;</div></div><div class="ad-slide" style="background:linear-gradient(135deg,#0d1117,#1e3a5f);display:none;align-items:center;justify-content:space-between;padding:20px 30px;height:120px;"><div><div style="color:#ffd700;font-size:12px;font-weight:bold;">ADVERTISEMENT</div><div style="color:white;font-size:24px;font-weight:bold;"><div class="section">#9889; Harisudhan Electronics</div><div style="color:#ccc;font-size:13px;">Latest gadgets at lowest prices!</div></div><div style="font-size:60px;"><div class="section">#128241;</div></div><div class="ad-slide" style="background:linear-gradient(135deg,#1a3a1a,#2d6a2d);display:none;align-items:center;justify-content:space-between;padding:20px 30px;height:120px;"><div><div style="color:#ffd700;font-size:12px;font-weight:bold;">ADVERTISEMENT</div><div style="color:white;font-size:24px;font-weight:bold;"><div class="section">#128218; Harisudhan Books</div><div style="color:#ccc;font-size:13px;">Knowledge at your fingertips!</div></div><div style="font-size:60px;"><div class="section">#128214;</div></div></div></div><div class="section">
   <h2>&#128293; Featured Products</h2>
   <div class="product-grid" id="productGrid"></div>
 </div>
@@ -215,7 +215,7 @@ function searchProducts(){
   render(products.filter(function(p){return p.name.toLowerCase().includes(q)||p.category.toLowerCase().includes(q);}));
 }
 document.getElementById('searchInput').addEventListener('keypress',function(e){if(e.key==='Enter')searchProducts();});
-function showToast(msg,type){var t=document.getElementById("toast");t.innerHTML=msg;t.style.background=type==="wish"?"linear-gradient(135deg,#dc2626,#db2777)":type==="error"?"linear-gradient(135deg,#dc2626,#b91c1c)":"linear-gradient(135deg,#7c3aed,#6d28d9)";t.classList.add("show");setTimeout(function(){t.classList.remove("show");},3000);}render(products);
+function showToast(msg,type){var t=document.getElementById("toast");t.innerHTML=msg;t.style.background=type==="wish"?"linear-gradient(135deg,#dc2626,#db2777)":type==="error"?"linear-gradient(135deg,#dc2626,#b91c1c)":"linear-gradient(135deg,#7c3aed,#6d28d9)";t.classList.add("show");setTimeout(function(){t.classList.remove("show");},3000);}var adIdx=0;var ads=document.querySelectorAll(".ad-slide");function showAd(){ads.forEach(function(a){a.style.display="none";});ads[adIdx].style.display="flex";adIdx=(adIdx+1)%ads.length;}setInterval(showAd,3000);render(products);
 </script>
 </body>
 </html>
