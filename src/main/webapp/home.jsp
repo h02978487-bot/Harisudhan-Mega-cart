@@ -18,17 +18,17 @@ canvas{position:fixed;top:0;left:0;z-index:0;pointer-events:none;}
 .nav-right{display:flex;gap:15px;align-items:center;}
 .nav-right a{color:white;text-decoration:none;font-size:13px;transition:color 0.3s;}
 .nav-right a:hover{color:#a78bfa;}
+.diwali-banner{position:relative;z-index:1;background:linear-gradient(135deg,#ff6b00,#ffd700);padding:12px;text-align:center;}
 .hero{position:relative;z-index:1;min-height:350px;display:flex;align-items:center;padding:60px 30px;background:linear-gradient(135deg,rgba(26,5,51,0.9),rgba(45,27,105,0.8));}
-.hero-content{max-width:600px;}
 .hero h1{font-size:48px;color:white;margin-bottom:15px;animation:fadeInUp 1s ease;}
 .hero h1 span{color:#a78bfa;}
 .hero p{font-size:18px;color:#ccc;margin-bottom:25px;animation:fadeInUp 1s ease 0.2s both;}
-.hero button{padding:14px 35px;background:#7c3aed;color:white;border:none;border-radius:30px;font-size:16px;font-weight:bold;cursor:pointer;animation:fadeInUp 1s ease 0.4s both;transition:all 0.3s;box-shadow:0 0 20px rgba(124,58,237,0.5);}
+.hero button{padding:14px 35px;background:#7c3aed;color:white;border:none;border-radius:30px;font-size:16px;font-weight:bold;cursor:pointer;transition:all 0.3s;box-shadow:0 0 20px rgba(124,58,237,0.5);}
 .hero button:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(124,58,237,0.8);}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 .categories{position:relative;z-index:1;background:rgba(26,5,51,0.8);padding:12px 20px;display:flex;gap:10px;overflow-x:auto;border-bottom:1px solid rgba(124,58,237,0.2);}
 .cat-btn{padding:8px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(124,58,237,0.3);border-radius:20px;cursor:pointer;font-size:13px;white-space:nowrap;color:white;transition:all 0.3s;}
-.cat-btn:hover,.cat-btn.active{background:#7c3aed;border-color:#7c3aed;color:white;}
+.cat-btn:hover,.cat-btn.active{background:#7c3aed;border-color:#7c3aed;}
 .section{position:relative;z-index:1;padding:30px 20px;}
 .section h2{font-size:24px;margin-bottom:20px;color:white;border-left:4px solid #7c3aed;padding-left:12px;}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;}
@@ -43,14 +43,14 @@ canvas{position:fixed;top:0;left:0;z-index:0;pointer-events:none;}
 .product-original{font-size:13px;color:#666;text-decoration:line-through;}
 .product-discount{font-size:13px;color:#34d399;font-weight:bold;}
 .btn-add-cart{width:100%;padding:10px;background:#7c3aed;border:none;border-radius:8px;font-size:14px;font-weight:bold;cursor:pointer;margin-top:10px;color:white;transition:all 0.3s;}
-.btn-add-cart:hover{background:#6d28d9;box-shadow:0 0 15px rgba(124,58,237,0.5);}
-.btn-wish{width:100%;padding:8px;background:transparent;border:1px solid #dc2626;border-radius:8px;font-size:13px;cursor:pointer;margin-top:5px;color:#f87171;transition:all 0.3s;}.btn-view{width:100%;padding:8px;background:transparent;border:1px solid #7c3aed;border-radius:8px;font-size:13px;cursor:pointer;margin-top:5px;color:#a78bfa;transition:all 0.3s;}
-.btn-view:hover{background:rgba(124,58,237,0.2);}
+.btn-add-cart:hover{background:#6d28d9;}
+.btn-wish{width:100%;padding:8px;background:transparent;border:1px solid #dc2626;border-radius:8px;font-size:13px;cursor:pointer;margin-top:5px;color:#f87171;transition:all 0.3s;}
+.btn-view{width:100%;padding:8px;background:transparent;border:1px solid #7c3aed;border-radius:8px;font-size:13px;cursor:pointer;margin-top:5px;color:#a78bfa;transition:all 0.3s;}
 footer{position:relative;z-index:1;background:rgba(26,5,51,0.9);color:#aaa;text-align:center;padding:20px;border-top:1px solid rgba(124,58,237,0.2);}
 footer span{color:#a78bfa;font-weight:bold;}
 .overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:1000;justify-content:center;align-items:center;}
 .overlay.active{display:flex;}
-.detail-box{background:#1a0533;border:1px solid rgba(124,58,237,0.4);border-radius:20px;padding:30px;max-width:500px;width:90%;position:relative;animation:fadeInUp 0.3s ease;}
+.detail-box{background:#1a0533;border:1px solid rgba(124,58,237,0.4);border-radius:20px;padding:30px;max-width:500px;width:90%;position:relative;}
 .detail-box img{width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:15px;}
 .close-btn{position:absolute;top:15px;right:15px;background:rgba(124,58,237,0.3);border:none;font-size:20px;cursor:pointer;color:white;width:35px;height:35px;border-radius:50%;}
 .detail-actions{display:flex;gap:10px;margin-top:15px;}
@@ -71,17 +71,23 @@ footer span{color:#a78bfa;font-weight:bold;}
   </div>
   <div class="nav-right">
     <a href="about.jsp">About</a>
-    <a href="about.jsp">About</a><a href="wishlist.jsp">    <a href="wishlist.jsp"><a href="cart.jsp">&#128722; Cart</a>#10084; Wishlist</a><a href="cart.jsp"><a href="cart.jsp">&#128722; Cart</a>#128722; Cart</a>#10084; Wishlist</a><a href="cart.jsp">    <a href="wishlist.jsp"><a href="cart.jsp">&#128722; Cart</a>#10084; Wishlist</a><a href="cart.jsp"><a href="cart.jsp">&#128722; Cart</a>#128722; Cart</a>#128722; Cart</a><a href="orders.jsp">Orders</a><a href="profile.jsp">    <a href="wishlist.jsp"><a href="cart.jsp">&#128722; Cart</a>#10084; Wishlist</a><a href="cart.jsp"><a href="cart.jsp">&#128722; Cart</a>#128722; Cart</a>#128100; Profile</a><a href="login.jsp">Logout</a>
+    <a href="wishlist.jsp">&#10084; Wishlist</a>
+    <a href="cart.jsp">&#128722; Cart</a>
     <a href="orders.jsp">Orders</a>
     <a href="profile.jsp">&#128100; Profile</a>
     <a href="login.jsp">Logout</a>
   </div>
 </div>
-<div style="background:linear-gradient(135deg,#ff6b00,#ffd700);padding:12px;text-align:center;position:relative;z-index:1;animation:blink 1s infinite;"><span style="font-size:20px;">🪔</span> <strong style="color:#1a0533;font-size:16px;">DIWALI MEGA SALE! Up to 50% OFF on all products!</strong> <span style="background:#1a0533;color:#ffd700;padding:4px 12px;border-radius:20px;font-size:13px;margin-left:10px;font-weight:bold;">USE CODE: DIWALI50</span> <span style="font-size:20px;">🪔</span></div>
+<div class="diwali-banner">
+  <span style="font-size:20px;">&#127866;</span>
+  <strong style="color:#1a0533;font-size:16px;">DIWALI MEGA SALE! Up to 50% OFF on all products!</strong>
+  <span style="background:#1a0533;color:#ffd700;padding:4px 12px;border-radius:20px;font-size:13px;margin-left:10px;font-weight:bold;">USE CODE: DIWALI50</span>
+  <span style="font-size:20px;">&#127866;</span>
+</div>
 <div class="hero">
-  <div class="hero-content">
+  <div>
     <h1>Shop Smart with<br><span>HarisudhanMart</span></h1>
-    <p>Discover amazing products at unbeatable prices. Electronics, Fashion, Books & more!</p>
+    <p>Discover amazing products at unbeatable prices!</p>
     <button onclick="document.querySelector('.section').scrollIntoView({behavior:'smooth'})">Explore Now &#8594;</button>
   </div>
 </div>
@@ -122,50 +128,20 @@ footer span{color:#a78bfa;font-weight:bold;}
 <script>
 var canvas=document.getElementById('canvas');
 var ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;canvas.height=window.innerHeight;
 var pts=[];
-for(var i=0;i<80;i++){
-  pts.push({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*2+0.5,
-    vx:(Math.random()-0.5)*0.5,
-    vy:(Math.random()-0.5)*0.5,
-    c:Math.random()>0.5?'#7c3aed':'#a78bfa',
-    o:Math.random()*0.4+0.1
-  });
-}
+for(var i=0;i<80;i++){pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+0.5,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5,c:Math.random()>0.5?'#7c3aed':'#a78bfa',o:Math.random()*0.4+0.1});}
 function drawCanvas(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   pts.forEach(function(p,i){
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle=p.c;
-    ctx.globalAlpha=p.o;
-    ctx.fill();
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.c;ctx.globalAlpha=p.o;ctx.fill();
     p.x+=p.vx;p.y+=p.vy;
     if(p.x<0||p.x>canvas.width)p.vx*=-1;
     if(p.y<0||p.y>canvas.height)p.vy*=-1;
     pts.forEach(function(q,j){
-      if(i!==j){
-        var dx=p.x-q.x,dy=p.y-q.y;
-        var dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<120){
-          ctx.beginPath();
-          ctx.moveTo(p.x,p.y);
-          ctx.lineTo(q.x,q.y);
-          ctx.strokeStyle='#7c3aed';
-          ctx.globalAlpha=(1-dist/120)*0.15;
-          ctx.lineWidth=0.5;
-          ctx.stroke();
-        }
-      }
-    });
-  });
-  ctx.globalAlpha=1;
-  requestAnimationFrame(drawCanvas);
-}
+      if(i!==j){var dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<120){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='#7c3aed';ctx.globalAlpha=(1-dist/120)*0.15;ctx.lineWidth=0.5;ctx.stroke();}}});});
+  ctx.globalAlpha=1;requestAnimationFrame(drawCanvas);}
 drawCanvas();
 window.addEventListener('resize',function(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
 const products=[
@@ -189,14 +165,18 @@ function addToCartLS(idx){
   var p=products[idx];
   var cart=JSON.parse(localStorage.getItem('hmCart')||'[]');
   var existing=cart.find(function(i){return i.id===p.id;});
-  if(existing){existing.qty++;}
-  else{cart.push({id:p.id,name:p.name,price:p.price,original:p.original,category:p.category,image:p.image,qty:1});}
+  if(existing){existing.qty++;}else{cart.push({id:p.id,name:p.name,price:p.price,original:p.original,category:p.category,image:p.image,qty:1});}
   localStorage.setItem('hmCart',JSON.stringify(cart));
   alert('Added to cart!');
 }
-function showDetail(idx){
-  currentIdx=idx;
+function addToWish(idx){
   var p=products[idx];
+  var wish=JSON.parse(localStorage.getItem('hmWish')||'[]');
+  if(!wish.find(function(i){return i.id===p.id;})){wish.push(p);localStorage.setItem('hmWish',JSON.stringify(wish));alert('Added to wishlist! ❤️');}
+  else{alert('Already in wishlist!');}
+}
+function showDetail(idx){
+  currentIdx=idx;var p=products[idx];
   document.getElementById('dImg').src=p.image;
   document.getElementById('dName').textContent=p.name;
   document.getElementById('dCat').textContent=p.category;
@@ -216,15 +196,14 @@ function render(list){
       '<div class="product-category">'+p.category+'</div>'+
       '<div class="product-rating">'+p.rating+' ('+p.reviews+')</div>'+
       '<div class="product-price">'+money(p.price)+'</div>'+
-      '<div><span class="product-original">'+money(p.original)+'</span> <span class="product-discount"> '+disc(p.price,p.original)+'% off</span></div>'+
-      '<button class="btn-add-cart" onclick="event.stopPropagation();addToCartLS('+idx+')">Add to Cart</button>'+
+      '<div><span class="product-original">'+money(p.original)+'</span> <span class="product-discount">'+disc(p.price,p.original)+'% off</span></div>'+
+      '<button class="btn-add-cart" onclick="event.stopPropagation();addToCartLS('+idx+')">&#128722; Add to Cart</button>'+
+      '<button class="btn-wish" onclick="event.stopPropagation();addToWish('+idx+')">&#10084; Wishlist</button>'+
       '<button class="btn-view" onclick="event.stopPropagation();showDetail('+idx+')">View Details</button>'+
       '</div>';
   }).join('');
   var cards=document.querySelectorAll('.product-card');
-  cards.forEach(function(card,i){
-    setTimeout(function(){card.classList.add('show');},i*100);
-  });
+  cards.forEach(function(card,i){setTimeout(function(){card.classList.add('show');},i*100);});
 }
 function filterCat(el,cat){
   document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});
