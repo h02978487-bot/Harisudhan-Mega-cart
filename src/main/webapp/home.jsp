@@ -77,6 +77,7 @@ footer span{color:#a78bfa;font-weight:bold;}
     <a href="login.jsp">Logout</a>
   </div>
 </div>
+<div style="background:linear-gradient(135deg,#ff6b00,#ffd700);padding:12px;text-align:center;position:relative;z-index:1;animation:blink 1s infinite;"><span style="font-size:20px;">🪔</span> <strong style="color:#1a0533;font-size:16px;">DIWALI MEGA SALE! Up to 50% OFF on all products!</strong> <span style="background:#1a0533;color:#ffd700;padding:4px 12px;border-radius:20px;font-size:13px;margin-left:10px;font-weight:bold;">USE CODE: DIWALI50</span> <span style="font-size:20px;">🪔</span></div>
 <div class="hero">
   <div class="hero-content">
     <h1>Shop Smart with<br><span>HarisudhanMart</span></h1>
