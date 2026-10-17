@@ -59,7 +59,7 @@ footer span{color:#a78bfa;font-weight:bold;}
 .btn-buy{background:#7c3aed;border:none;color:white;}
 #chatBtn{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#7c3aed;border-radius:50%;border:none;cursor:pointer;font-size:28px;box-shadow:0 0 20px rgba(124,58,237,0.6);z-index:999;animation:pulse 2s infinite;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(124,58,237,0.6);}70%{box-shadow:0 0 0 15px rgba(124,58,237,0);}100%{box-shadow:0 0 0 0 rgba(124,58,237,0);}}
-</style>
+#toast{position:fixed;bottom:90px;right:20px;padding:14px 22px;border-radius:12px;color:white;font-size:14px;font-weight:bold;z-index:9999;display:none;transition:all 0.3s;}#toast.show{display:block;animation:toastIn 0.3s ease;}@keyframes toastIn{from{opacity:0;transform:translateX(100px);}to{opacity:1;transform:translateX(0);}}</style>
 </head>
 <body>
 <canvas id="canvas"></canvas>
@@ -124,7 +124,7 @@ footer span{color:#a78bfa;font-weight:bold;}
     </div>
   </div>
 </div>
-<button id="chatBtn" onclick="window.location.href='chatbot.jsp'">&#129302;</button>
+<div id="toast"></div><button id="chatBtn" onclick="window.location.href='chatbot.jsp'">&#129302;</button>
 <script>
 var canvas=document.getElementById('canvas');
 var ctx=canvas.getContext('2d');
@@ -167,13 +167,13 @@ function addToCartLS(idx){
   var existing=cart.find(function(i){return i.id===p.id;});
   if(existing){existing.qty++;}else{cart.push({id:p.id,name:p.name,price:p.price,original:p.original,category:p.category,image:p.image,qty:1});}
   localStorage.setItem('hmCart',JSON.stringify(cart));
-  alert('Added to cart!');
+  showToast("alert('Added to cart!');#128722; Added to cart!", "success");
 }
 function addToWish(idx){
   var p=products[idx];
   var wish=JSON.parse(localStorage.getItem('hmWish')||'[]');
-  if(!wish.find(function(i){return i.id===p.id;})){wish.push(p);localStorage.setItem('hmWish',JSON.stringify(wish));alert('Added to wishlist! ❤️');}
-  else{alert('Already in wishlist!');}
+  if(!wish.find(function(i){return i.id===p.id;})){wish.push(p);localStorage.setItem('hmWish',JSON.stringify(wish));showToast("alert('Added to wishlist! ❤️');#10084; Added to wishlist!", "wish");}
+  else{showToast("Already in wishlist!", "error");}
 }
 function showDetail(idx){
   currentIdx=idx;var p=products[idx];
@@ -215,7 +215,7 @@ function searchProducts(){
   render(products.filter(function(p){return p.name.toLowerCase().includes(q)||p.category.toLowerCase().includes(q);}));
 }
 document.getElementById('searchInput').addEventListener('keypress',function(e){if(e.key==='Enter')searchProducts();});
-render(products);
+function showToast(msg,type){var t=document.getElementById("toast");t.innerHTML=msg;t.style.background=type==="wish"?"linear-gradient(135deg,#dc2626,#db2777)":type==="error"?"linear-gradient(135deg,#dc2626,#b91c1c)":"linear-gradient(135deg,#7c3aed,#6d28d9)";t.classList.add("show");setTimeout(function(){t.classList.remove("show");},3000);}render(products);
 </script>
 </body>
 </html>
