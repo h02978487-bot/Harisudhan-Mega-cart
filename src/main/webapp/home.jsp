@@ -8,7 +8,30 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Arial,sans-serif;background:#0d0d1a;}
 canvas{position:fixed;top:0;left:0;z-index:0;pointer-events:none;}
-.navbar{background:rgba(26,5,51,0.95);backdrop-filter:blur(10px);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(124,58,237,0.3);}
+.serial-lights{position:fixed;top:0;left:0;width:100%;z-index:200;display:flex;justify-content:space-around;padding:4px 0;background:rgba(0,0,0,0.3);}
+.bulb{width:12px;height:12px;border-radius:50%;animation:glow 1s infinite alternate;}
+.bulb:nth-child(1){background:#ff0000;animation-delay:0s;}
+.bulb:nth-child(2){background:#ff6600;animation-delay:0.1s;}
+.bulb:nth-child(3){background:#ffff00;animation-delay:0.2s;}
+.bulb:nth-child(4){background:#00ff00;animation-delay:0.3s;}
+.bulb:nth-child(5){background:#00ffff;animation-delay:0.4s;}
+.bulb:nth-child(6){background:#0000ff;animation-delay:0.5s;}
+.bulb:nth-child(7){background:#ff00ff;animation-delay:0.6s;}
+.bulb:nth-child(8){background:#ff0000;animation-delay:0.7s;}
+.bulb:nth-child(9){background:#ff6600;animation-delay:0.8s;}
+.bulb:nth-child(10){background:#ffff00;animation-delay:0.9s;}
+.bulb:nth-child(11){background:#00ff00;animation-delay:1.0s;}
+.bulb:nth-child(12){background:#00ffff;animation-delay:1.1s;}
+.bulb:nth-child(13){background:#0000ff;animation-delay:1.2s;}
+.bulb:nth-child(14){background:#ff00ff;animation-delay:1.3s;}
+.bulb:nth-child(15){background:#ff0000;animation-delay:1.4s;}
+.bulb:nth-child(16){background:#ff6600;animation-delay:1.5s;}
+.bulb:nth-child(17){background:#ffff00;animation-delay:1.6s;}
+.bulb:nth-child(18){background:#00ff00;animation-delay:1.7s;}
+.bulb:nth-child(19){background:#00ffff;animation-delay:1.8s;}
+.bulb:nth-child(20){background:#0000ff;animation-delay:1.9s;}
+@keyframes glow{0%{opacity:0.2;transform:scale(0.8);}100%{opacity:1;transform:scale(1.2);box-shadow:0 0 8px currentColor;}}
+.navbar{background:rgba(26,5,51,0.95);backdrop-filter:blur(10px);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:20px;z-index:100;border-bottom:1px solid rgba(124,58,237,0.3);}
 .logo{color:white;font-size:22px;font-weight:bold;}
 .logo span{color:#a78bfa;}
 .search-box{display:flex;flex:1;margin:0 20px;}
@@ -22,18 +45,20 @@ canvas{position:fixed;top:0;left:0;z-index:0;pointer-events:none;}
 .diwali strong{color:#1a0533;font-size:15px;}
 .diwali .code{background:#1a0533;color:#ffd700;padding:3px 12px;border-radius:20px;font-size:13px;margin-left:10px;font-weight:bold;}
 .hero{position:relative;z-index:1;min-height:300px;display:flex;align-items:center;padding:50px 30px;background:linear-gradient(135deg,rgba(26,5,51,0.95),rgba(45,27,105,0.85));}
-.hero h1{font-size:44px;color:white;margin-bottom:12px;}
+.hero h1{font-size:44px;color:white;margin-bottom:12px;animation:fadeInUp 1s ease;}
 .hero h1 span{color:#a78bfa;}
-.hero p{font-size:16px;color:#ccc;margin-bottom:20px;}
-.hero button{padding:12px 30px;background:#7c3aed;color:white;border:none;border-radius:30px;font-size:15px;font-weight:bold;cursor:pointer;box-shadow:0 0 20px rgba(124,58,237,0.5);}
+.hero p{font-size:16px;color:#ccc;margin-bottom:20px;animation:fadeInUp 1s ease 0.2s both;}
+.hero button{padding:12px 30px;background:#7c3aed;color:white;border:none;border-radius:30px;font-size:15px;font-weight:bold;cursor:pointer;box-shadow:0 0 20px rgba(124,58,237,0.5);animation:fadeInUp 1s ease 0.4s both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 .ads{position:relative;z-index:1;padding:15px 20px;}
-.ad-box{border-radius:15px;overflow:hidden;position:relative;height:110px;}
-.ad-slide{display:none;align-items:center;justify-content:space-between;padding:20px 30px;height:110px;}
+.ad-box{border-radius:15px;overflow:hidden;height:120px;position:relative;}
+.ad-slide{display:none;width:100%;height:120px;align-items:center;justify-content:space-between;padding:20px 30px;position:absolute;top:0;left:0;transition:opacity 0.5s;}
 .ad-slide.active{display:flex;}
+.ad-label{color:#ffd700;font-size:11px;font-weight:bold;margin-bottom:5px;}
 .ad-title{color:white;font-size:22px;font-weight:bold;margin-bottom:5px;}
 .ad-sub{color:#ccc;font-size:13px;}
-.ad-label{color:#ffd700;font-size:11px;font-weight:bold;margin-bottom:5px;}
-.ad-icon{font-size:55px;}
+.ad-img{height:90px;width:90px;object-fit:contain;border-radius:10px;}
+.price-filter{position:relative;z-index:1;background:rgba(26,5,51,0.8);padding:12px 20px;display:flex;gap:15px;align-items:center;border-bottom:1px solid rgba(124,58,237,0.2);}
 .categories{position:relative;z-index:1;background:rgba(26,5,51,0.8);padding:12px 20px;display:flex;gap:10px;overflow-x:auto;border-bottom:1px solid rgba(124,58,237,0.2);}
 .cat-btn{padding:8px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(124,58,237,0.3);border-radius:20px;cursor:pointer;font-size:13px;white-space:nowrap;color:white;transition:all 0.3s;}
 .cat-btn:hover,.cat-btn.active{background:#7c3aed;border-color:#7c3aed;}
@@ -72,6 +97,15 @@ footer span{color:#a78bfa;font-weight:bold;}
 </style>
 </head>
 <body>
+<div class="serial-lights">
+  <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+  <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+  <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+  <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+  <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+  <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+  <div class="bulb"></div><div class="bulb"></div>
+</div>
 <canvas id="canvas"></canvas>
 <div class="navbar">
   <div class="logo">&#128722; <span>Harisudhan</span>Mart</div>
@@ -89,7 +123,7 @@ footer span{color:#a78bfa;font-weight:bold;}
   </div>
 </div>
 <div class="diwali">
-  &#127866; <strong>DIWALI MEGA SALE! Up to 50% OFF on all products!</strong>
+  &#127866; <strong>DIWALI MEGA SALE! Up to 50% OFF!</strong>
   <span class="code">USE CODE: DIWALI50</span> &#127866;
 </div>
 <div class="hero">
@@ -101,39 +135,60 @@ footer span{color:#a78bfa;font-weight:bold;}
 </div>
 <div class="ads">
   <div class="ad-box">
-    <div class="ad-slide active" style="background:linear-gradient(135deg,#1a0533,#7c3aed);">
+    <div class="ad-slide active" style="background:linear-gradient(135deg,#000000,#1a1a2e);">
       <div>
-        <div class="ad-label">&#128252; ADVERTISEMENT</div>
-        <div class="ad-title">Harisudhan Textiles</div>
-        <div class="ad-sub">Premium fabrics at best prices!</div>
+        <div class="ad-label">&#11088; FEATURED BRAND</div>
+        <div class="ad-title">Sony Electronics</div>
+        <div class="ad-sub">World-class audio & visual experience!</div>
       </div>
-      <div class="ad-icon">&#128255;</div>
+      <img class="ad-img" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200" alt="Sony">
     </div>
-    <div class="ad-slide" style="background:linear-gradient(135deg,#0d1117,#1e3a5f);">
+    <div class="ad-slide" style="background:linear-gradient(135deg,#003366,#0066cc);">
       <div>
-        <div class="ad-label">&#9889; ADVERTISEMENT</div>
-        <div class="ad-title">Harisudhan Electronics</div>
-        <div class="ad-sub">Latest gadgets at lowest prices!</div>
+        <div class="ad-label">&#128241; TOP BRAND</div>
+        <div class="ad-title">Samsung Galaxy</div>
+        <div class="ad-sub">Next generation smartphones are here!</div>
       </div>
-      <div class="ad-icon">&#128241;</div>
+      <img class="ad-img" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=200" alt="Samsung">
     </div>
-    <div class="ad-slide" style="background:linear-gradient(135deg,#1a3a1a,#2d6a2d);">
+    <div class="ad-slide" style="background:linear-gradient(135deg,#1a0533,#4a0080);">
       <div>
-        <div class="ad-label">&#128218; ADVERTISEMENT</div>
-        <div class="ad-title">Harisudhan Books</div>
-        <div class="ad-sub">Knowledge at your fingertips!</div>
+        <div class="ad-label">&#127911; BEST SELLER</div>
+        <div class="ad-title">boAt Speakers</div>
+        <div class="ad-sub">Feel the bass, live the music!</div>
       </div>
-      <div class="ad-icon">&#128214;</div>
+      <img class="ad-img" src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=200" alt="boAt">
     </div>
-    <div class="ad-slide" style="background:linear-gradient(135deg,#3a1a00,#6a3d00);">
+    <div class="ad-slide" style="background:linear-gradient(135deg,#1a3a00,#2d6a00);">
       <div>
-        <div class="ad-label">&#127869; ADVERTISEMENT</div>
-        <div class="ad-title">Harisudhan Foods</div>
-        <div class="ad-sub">Fresh & healthy food delivered!</div>
+        <div class="ad-label">&#128247; POPULAR</div>
+        <div class="ad-title">Zebronics Cameras</div>
+        <div class="ad-sub">Capture every moment perfectly!</div>
       </div>
-      <div class="ad-icon">&#127871;</div>
+      <img class="ad-img" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=200" alt="Zebronics">
+    </div>
+    <div class="ad-slide" style="background:linear-gradient(135deg,#330000,#660000);">
+      <div>
+        <div class="ad-label">&#8987; EXCLUSIVE</div>
+        <div class="ad-title">Fastrack Watches</div>
+        <div class="ad-sub">Style that speaks for itself!</div>
+      </div>
+      <img class="ad-img" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200" alt="Fastrack">
+    </div>
+    <div class="ad-slide" style="background:linear-gradient(135deg,#003333,#006666);">
+      <div>
+        <div class="ad-label">&#128187; HOT DEAL</div>
+        <div class="ad-title">HP Laptops</div>
+        <div class="ad-sub">Power your productivity today!</div>
+      </div>
+      <img class="ad-img" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=200" alt="HP">
     </div>
   </div>
+</div>
+<div class="price-filter">
+  <span style="color:#a78bfa;font-size:13px;font-weight:bold;">&#128269; Price:</span>
+  <input type="range" id="priceRange" min="0" max="50000" value="50000" style="flex:1;accent-color:#7c3aed;" oninput="filterPrice(this.value)">
+  <span style="color:white;font-size:13px;" id="priceLabel">Up to Rs.50,000</span>
 </div>
 <div class="categories">
   <button class="cat-btn active" onclick="filterCat(this,'all')">&#11088; All</button>
@@ -218,6 +273,7 @@ const products=[
 {id:12,name:"Bluetooth Speaker",category:"Electronics",price:1999,original:3499,rating:"★★★★★",reviews:389,desc:"Waterproof portable speaker 12hr battery.",image:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&q=80"}
 ];
 var currentIdx=0;
+var currentList=products;
 function money(n){return 'Rs.'+n.toLocaleString();}
 function disc(p,o){return Math.round((o-p)/o*100);}
 function addToCartLS(idx){
@@ -247,6 +303,7 @@ function showDetail(idx){
   document.getElementById('detailOverlay').classList.add('active');
 }
 function render(list){
+  currentList=list;
   document.getElementById('productGrid').innerHTML=list.map(function(p){
     var idx=products.indexOf(p);
     return '<div class="product-card" onclick="showDetail('+idx+')">'+
@@ -267,6 +324,10 @@ function filterCat(el,cat){
   document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});
   el.classList.add('active');
   render(cat==='all'?products:products.filter(function(p){return p.category===cat;}));
+}
+function filterPrice(val){
+  document.getElementById('priceLabel').textContent='Up to Rs.'+parseInt(val).toLocaleString();
+  render(products.filter(function(p){return p.price<=val;}));
 }
 function searchProducts(){
   var q=document.getElementById('searchInput').value.toLowerCase();
